@@ -33,3 +33,15 @@ body {
 .findus-button {
   @apply px-[16px] py-[12px] text-[#706F6F] text-[16px] font-medium w-full cursor-pointer flex items-center gap-[10px] justify-center;
 }
+
+.form-input {
+  @apply w-full px-[20px] py-[12px] text-[#403F3F] text-[16px] outline-0 border border-transparent focus:border-[#403F3F] bg-[#F3F3F3];
+}
+
+.form-label {
+  @apply label text-[#403F3F] text-[18px] md:text-[20px] font-semibold py-[10px];
+}
+
+.log-button {
+  @apply px-[32px] py-[6px] bg-[#403F3F] text-white text-[20px] font-semibold cursor-pointer rounded-[4px];
+}

@@ -1,10 +1,11 @@
 import React from 'react';
 import { CiBookmark, CiShare2 } from 'react-icons/ci';
 import { FaEye, FaStar } from 'react-icons/fa';
+import { Link } from 'react-router';
 
 const NewsCard = ({singleNews}) => {
 
-    const {author, title, image_url, details, rating, total_view } = singleNews;
+    const {id, author, title, image_url, details, rating, total_view } = singleNews;
     const date = new Date(singleNews.author.published_date).toLocaleDateString();
 
     const totalStars = 5;
@@ -28,7 +29,7 @@ const NewsCard = ({singleNews}) => {
             <div className='p-[20px]'>
                 <h2 className='text-[#403F3F] text-[20px] font-bold'>{title}</h2>
                 <img className='mt-[20px] mb-[30px] rounded-[5px]' src={image_url} alt="" />
-                <p className='text-[#706F6F] text-[16px]'>{details.length > 200 ? (<>{details.slice(0, 200)}...<span className='bg-[linear-gradient(90deg,#FF8C47_0%,#F75B5F_100%)] bg-clip-text text-transparent font-semibold cursor-pointer'>Read More</span></>) : (details)}</p>
+                <p className='text-[#706F6F] text-[16px]'>{details.length > 200 ? (<>{details.slice(0, 200)}...<Link to={`/news-details/${id}`} className='bg-[linear-gradient(90deg,#FF8C47_0%,#F75B5F_100%)] bg-clip-text text-transparent font-semibold cursor-pointer'>Read More</Link></>) : (details)}</p>
                 <span className='block bg-[#E7E7E7] w-full h-[1px] my-[20px]'></span>
                 <div className='flex justify-between items-center'>
                     <div className='flex items-center gap-[10px]'>
