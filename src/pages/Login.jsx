@@ -15,8 +15,6 @@ const Login = () => {
         logIn(email, password)
             .then(result => {
                 e.target.reset();
-                const user = result.user;
-                console.log(user)
                 navigate(`${location.state? location.state : '/'}`);
             })
             .catch(error => {
